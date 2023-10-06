@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8toZ 미니프로젝트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap');
 
         * {
-            font-family: 'Dongle', sans-serif;
+            font-family: 'Diphylleia', serif;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
         /* 타이틀 위치 */
@@ -28,13 +31,20 @@
             background-size: cover;
 
         }
+
         /* 개인 프로파일 위치  */
-        .profile { 
+        .profile {
             width: 800px;
             margin: 50px auto 20px auto;
             padding: 20px 20px 20px 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 3px 0px blue;
+        }
+
+        .details {
+            width: 850px;
+            margin: 40px auto 20px auto;
+            padding: 20px 20px 20px 20px;
         }
     </style>
     <!-- 본인 정보에 관한 코드 작성 부분-->
@@ -42,23 +52,90 @@
         function info1() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
+            $('#details').empty();
 
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://ca.slack-edge.com/T043597JK8V-U05QUMWUDQB-bcdf90a532a7-512" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : </p>
+                  <p class="card-text">MBTI : </p>
+                  <p class="card-text">장점 : </p>
+                  <p class="card-text">협업스타일 : </p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
         }
+
         function info2() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
 
         }
+
         function info3() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
+            $('#details').empty();
 
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : </p>
+                  <p class="card-text">MBTI : </p>
+                  <p class="card-text">장점 : </p>
+                  <p class="card-text">협업스타일 : </p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
         }
+
         function info4() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
+            $('#details').empty();
 
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://ca.slack-edge.com/T043597JK8V-U05RWM8HUBB-2b697d5008f2-512" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : 컴공 4학년 휴학중입니다. 졸업 전에 제대로 실력을 쌓고 많은 프로젝트와 협업 경험을 하고 싶어 내일배움캠프에 합류하게 되었습니다.</p>
+                  <p class="card-text">MBTI : ISFJ</p>
+                  <p class="card-text">장점 : 책임감과 인내력이 강한 편이며 차분하고 묵묵하게 할 일을 하는 편입니다. 필요할 땐 외향적으로 사람들과 만나곤 합니다.</p>
+                  <p class="card-text">협업스타일 : 팀원들 간의 화합과 협력을 위한 역할을 하곤 합니다.</p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="https://velog.io/@zo_meong">velog : @zo_meong</a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
         }
+
         function info5() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
@@ -71,7 +148,8 @@
     <div class="title">
         <h1>8toZ 미니 프로젝트</h1>
     </div>
-    <div class=profile>
+
+    <div class="profile">
         <div id="myprofile" class="row row-cols-1 row-cols-md-5 g-5">
             <div class="col">
                 <div class="card h-100">
@@ -112,7 +190,7 @@
             <div class="col">
                 <div class="card h-100">
                     <!-- slack -> 다이렉트 메세지 -> 본인 채팅 이미지 클릭 url 주소 복사 후 입력   -->
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U05QUMWUDQB-bcdf90a532a7-512" />
+                    <img src="https://ca.slack-edge.com/T043597JK8V-U05RWM8HUBB-2b697d5008f2-512" />
                     <div class="card-body">
                         <h5 class="card-title">김지현</h5>
                     </div>
@@ -134,6 +212,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="details" class="details">
     </div>
 </body>
 

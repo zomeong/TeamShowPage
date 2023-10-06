@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8toZ 미니프로젝트</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -18,6 +18,13 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
 
+        /* 배경화면 고정 */
+        body {
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/36/beach-1850248_1280.jpg');
+            background-repeat: no-repeat;
+        }
+
+
         /* 타이틀 위치 */
         .title {
             height: 200px;
@@ -26,7 +33,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/36/beach-1850248_1280.jpg');
             background-position: center;
             background-size: cover;
 
@@ -41,14 +47,31 @@
             box-shadow: 0px 0px 3px 0px blue;
         }
 
+        /* 이름 위치 style */
+        .card-body {
+            text-align: center;
+        }
+
+        /* 버튼 위치 */
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 정보 박스 위치 */
         .details {
-            width: 850px;
+            width: 1000px;
             margin: 40px auto 20px auto;
             padding: 20px 20px 20px 20px;
+            background-color: transparent;
         }
+
     </style>
     <!-- 본인 정보에 관한 코드 작성 부분-->
     <script>
+
         function info1() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
@@ -61,25 +84,26 @@
                 <img src="https://ca.slack-edge.com/T043597JK8V-U05QUMWUDQB-bcdf90a532a7-512" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body_info">
                   <!-- <h4 class="card-title"></h4> -->
-                  <p class="card-text">소개 : </p>
-                  <p class="card-text">MBTI : </p>
-                  <p class="card-text">장점 : </p>
-                  <p class="card-text">협업스타일 : </p>
-                  <p class="card-text"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
+                  <p class="card-text" style="font-size:30px;">소개: 안녕하세요 정성호 입니다.</p>
+                  <p class="card-text" style="font-size:30px;">MBTI: ESTJ </p>
+                  <p class="card-text" style="font-size:30px;">장점: </p>
+                  <p class="card-text" style="font-size:30px;">협업스타일: </p>
+                  <p class="card-text" style="font-size:30px;"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
                 </div>
               </div>
             </div>
           </div>
         `
             $('#details').append(tmp_html);
+
         }
 
         function info2() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
-
+        
         }
 
         function info3() {
@@ -159,7 +183,7 @@
                         <h5 class="card-title">정성호</h5>
                     </div>
                     <div class="mybtn">
-                        <button onclick="info1()" type="button" class="btn btn-dark">세부 정보</button>
+                        <button id="info1" onclick="info1()" type="button" class="btn btn-dark">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -171,7 +195,7 @@
                         <h5 class="card-title">이지선</h5>
                     </div>
                     <div class="mybtn">
-                        <button onclick="info2()" type="button" class="btn btn-dark">세부 정보</button>
+                        <button id="info2" onclick="info2()" type="button" class="btn btn-dark">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -183,7 +207,7 @@
                         <h5 class="card-title">차우빈</h5>
                     </div>
                     <div class="mybtn">
-                        <button onclick="info3()" type="button" class="btn btn-dark">세부 정보</button>
+                        <button id="info3" onclick="info3()" type="button" class="btn btn-dark">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -195,7 +219,7 @@
                         <h5 class="card-title">김지현</h5>
                     </div>
                     <div class="mybtn">
-                        <button onclick="info4()" class="btn btn-dark">세부 정보</button>
+                        <button id="info4" onclick="info4()" class="btn btn-dark">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -207,13 +231,13 @@
                         <h5 class="card-title">지정욱</h5>
                     </div>
                     <div class="mybtn">
-                        <button onclick="info5()" type="button" class="btn btn-dark">세부 정보</button>
+                        <button id="info5" onclick="info5()" type="button" class="btn btn-dark">세부 정보</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- 정보 표시 박스 -->
     <div id="details" class="details">
     </div>
 </body>

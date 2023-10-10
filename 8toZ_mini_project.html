@@ -34,7 +34,7 @@
 
         /* 개인 프로파일 위치  */
         .profile {
-            width: 800px;
+            width: 900px;
             margin: 50px auto 20px auto;
             padding: 20px 20px 20px 20px;
             border-radius: 5px;
@@ -42,7 +42,7 @@
         }
 
         .details {
-            width: 850px;
+            width: 1000px;
             margin: 40px auto 20px auto;
             padding: 20px 20px 20px 20px;
         }
@@ -80,6 +80,28 @@
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
 
+            $('#details').empty();
+
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : </p>
+                  <p class="card-text">MBTI : </p>
+                  <p class="card-text">장점 : </p>
+                  <p class="card-text">협업스타일 : </p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
         }
 
         function info3() {
@@ -140,6 +162,28 @@
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
 
+            $('#details').empty();
+
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : </p>
+                  <p class="card-text">MBTI : </p>
+                  <p class="card-text">장점 : </p>
+                  <p class="card-text">협업스타일 : </p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="url">velog : </a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
         }  
     </script>
 </head>

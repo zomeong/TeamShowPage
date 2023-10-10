@@ -38,6 +38,15 @@
             justify-content: right;
         }
 
+        .delete-btn {
+            margin-left: auto;
+        }
+
+        .list-group-item {
+            display: flex;
+            align-items: center;
+        }
+
         .comment {
             margin: 30px auto 30px auto;
         }
@@ -47,8 +56,8 @@
         // Firebase SDK 라이브러리 가져오기
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
         import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
 
         // Firebase 구성 정보 설정
         const firebaseConfig = {
@@ -76,18 +85,28 @@
             window.location.reload();
         })
 
-        async function updateCmt(){
+        async function updateCmt() {
             let docs = await getDocs(collection(db, "mini_project"));
-        docs.forEach((doc) => {
-            let comment = doc.data().comment;
-            let temp_html = `
-            <li class="list-group-item">${comment}</li>`;
-            $('#list-group').append(temp_html);
-        });
+            docs.forEach((doc) => {
+                let comment = doc.data().comment;
+                let commentId = doc.id;
+
+                let temp_html = `
+                <li class="list-group-item">${comment}
+                    <button class="btn btn-danger btn-sm delete-btn" data-comment-id="${commentId}">삭제</button>
+                </li>`;
+                $('#list-group').append(temp_html);
+            });
         }
 
+        $('#list-group').on('click', '.delete-btn', async function () {
+            let commentId = $(this).data('comment-id');
+            await deleteDoc(doc(db, "mini_project", commentId));
+            alert('댓글이 삭제되었습니다.');
+            window.location.reload();
+        });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             updateCmt();
         });
 

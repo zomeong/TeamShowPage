@@ -26,11 +26,11 @@
             background-size: cover;
 
         }
-
-
+    
         /* 타이틀 위치 */
         .title {
-            height: 200px;
+            /*height: 120px;*/
+            margin-top: 36px;
             color: black;
             display: flex;
             flex-direction: column;
@@ -57,11 +57,13 @@
 
         /* 버튼 위치 */
         .mybtn {
+            padding: 200px,37px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
+    
 
         /* 정보 박스 위치 */
         .details {
@@ -78,7 +80,6 @@
         }
         .my-detail-btn {
             /*width: 100%;*/
-
             background-color: #212529;
             border: none;
             padding: .375rem .75rem;
@@ -94,7 +95,9 @@
             margin:30px auto 30px auto;
             padding: 20px 20px 20px 20px;
         }
+    
         
+    
     </style>
     <!-- 본인 정보에 관한 코드 작성 부분-->
     <script>
@@ -320,11 +323,12 @@
             <span id="todays"></span></p>
     </div>
     <div class="col">
-        <div class="mybtn">
-            <button id="info0" onclick="information(0)" class="my-detail-btn" style="width: 100px">팀 소개</button>
+        <div class="mybtn" style="margin-top: 20px;">
+            <button id="info0" onclick="information(0)" class="my-detail-btn" style="width: 100px; margin: 0px 10px 0px 0px;">팀 소개</button>  
+            <button id="close"onclick = "openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
         </div>
-    </div>
 
+    </div>
     <div class="profile">
         <div id="myprofile" class="row row-cols-1 row-cols-md-5 g-5">
             <div class="col">
@@ -398,9 +402,7 @@
     <!-- 정보 표시 박스 -->
     <div id="details" class="details" style="height: 320px; margin-bottom: 50px">
     </div>
-    <div class="comment">
-        <button onclick = "openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
-    </div>
+
 </body>
 
 </html>

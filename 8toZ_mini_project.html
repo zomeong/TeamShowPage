@@ -203,6 +203,28 @@
         function info5() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
+             $('#details').empty();
+
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://ca.slack-edge.com/T043597JK8V-U05SS8DC292-edfb9a0a6966-512" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <!-- <h4 class="card-title"></h4> -->
+                  <p class="card-text">소개 : 부족한 실력을 기르고 다른 사람들과 협업해 보는 경헝을 쌓고자 내일배움캠프에 참여하게 되었습니다.</p>
+                  <p class="card-text">MBTI : ISFP </p>
+                  <p class="card-text">장점 : 맡은 역할은 끝까지 최선을 다 합니다.</p>
+                  <p class="card-text">협업스타일 : 배려와 존중을 하며 협업하는 스타일입니다.</p>
+                  <p class="card-text"><small class="text-body-secondary"><a href="https://velog.io/@jeong_uk">velog : @jeong_uk </a></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
 
         }  
     </script>
@@ -266,7 +288,7 @@
             <div class="col">
                 <div class="card h-100">
                     <!-- slack -> 다이렉트 메세지 -> 본인 채팅 이미지 클릭 url 주소 복사 후 입력   -->
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U05QUMWUDQB-bcdf90a532a7-512" />
+                    <img src="https://ca.slack-edge.com/T043597JK8V-U05SS8DC292-edfb9a0a6966-512" />
                     <div class="card-body">
                         <h5 class="card-title">지정욱</h5>
                     </div>

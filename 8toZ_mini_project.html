@@ -78,7 +78,8 @@
         }
 
         .my-detail-btn {
-            width: 100%;
+            /*width: 100%;*/
+
             background-color: #212529;
             border: none;
             padding: .375rem .75rem;
@@ -90,6 +91,31 @@
     </style>
     <!-- 본인 정보에 관한 코드 작성 부분-->
     <script>
+        function info0() {
+            //팀 세부정보
+            //소개, mbti, 장점, 협업스타일, 블로그 입력
+            $('#details').empty();
+
+            let tmp_html = `
+            <div class="card mb-3">
+            <div class="row g-0">
+<!--              <div class="col-md-4">-->
+<!--                <img src="https://ca.slack-edge.com/T043597JK8V-U05RWM8HUBB-2b697d5008f2-512" class="img-fluid rounded-start" alt="...">-->
+<!--              </div>-->
+              <div class="col-md-12">
+                <div class="card-body">
+
+                  <p class="card-text" style="font-size:30px; font-weight: bold;">8 to Z</p>
+                  <p class="card-text" style="font-size:20px;">팀 소개 : 8팀은 끝까지 간다!</p>
+                  <p class="card-text" style="font-size:20px;">사용 기술 : HTML, JavaScript, CSS, Python(flask)</p>
+                  <p class="card-text" style="font-size:20px;">팀 규칙 : 13-14시 점심 시간, 19-20시 저녁 시간, 20시30분 Git Merge</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            $('#details').append(tmp_html);
+        }
 
         function info1() {
             //본인 세부정보
@@ -142,7 +168,7 @@
                </div>
               </div>
             `
-          $('#details').append(tmp_html);
+            $('#details').append(tmp_html);
         }
 
         function info3() {
@@ -201,7 +227,7 @@
         function info5() {
             //본인 세부정보
             //소개, mbti, 장점, 협업스타일, 블로그 입력
-             $('#details').empty();
+            $('#details').empty();
 
             let tmp_html = `
             <div class="card mb-3">
@@ -233,6 +259,12 @@
         <h1>8toZ 미니 프로젝트</h1>
     </div>
 
+    <div class="col">
+        <div class="mybtn">
+            <button id="info0" onclick="info0()" class="my-detail-btn" style="width: 100px">팀 소개</button>
+        </div>
+    </div>
+
     <div class="profile">
         <div id="myprofile" class="row row-cols-1 row-cols-md-5 g-5">
             <div class="col">
@@ -243,7 +275,7 @@
                         <h5 class="card-title">정성호</h5>
                     </div>
                     <div class="mybtn">
-                        <button id="info1" onclick="info1()" type="button" class="my-detail-btn">세부 정보</button>
+                        <button id="info1" onclick="info1()" class="my-detail-btn" style="width: 100%">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -255,7 +287,7 @@
                         <h5 class="card-title">이지선</h5>
                     </div>
                     <div class="mybtn">
-                        <button id="info2" onclick="info2()" type="button" class="my-detail-btn">세부 정보</button>
+                        <button id="info2" onclick="info2()" class="my-detail-btn" style="width: 100%">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -267,7 +299,7 @@
                         <h5 class="card-title">차우빈</h5>
                     </div>
                     <div class="mybtn">
-                        <button id="info3" onclick="info3()" type="button" class="my-detail-btn">세부 정보</button>
+                        <button id="info3" onclick="info3()" class="my-detail-btn" style="width: 100%">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -279,7 +311,7 @@
                         <h5 class="card-title">김지현</h5>
                     </div>
                     <div class="mybtn">
-                        <button id="info4" onclick="info4()" class="my-detail-btn">세부 정보</button>
+                        <button id="info4" onclick="info4()" class="my-detail-btn" style="width: 100%">세부 정보</button>
                     </div>
                 </div>
             </div>
@@ -291,7 +323,7 @@
                         <h5 class="card-title">지정욱</h5>
                     </div>
                     <div class="mybtn">
-                        <button id="info5" onclick="info5()" type="button" class="my-detail-btn">세부 정보</button>
+                        <button id="info5" onclick="info5()" class="my-detail-btn" style="width: 100%">세부 정보</button>
                     </div>
                 </div>
             </div>

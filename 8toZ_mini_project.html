@@ -26,11 +26,11 @@
             background-size: cover;
 
         }
-
-
+    
         /* 타이틀 위치 */
         .title {
-            height: 200px;
+            /*height: 120px;*/
+            margin-top: 36px;
             color: black;
             display: flex;
             flex-direction: column;
@@ -62,12 +62,13 @@
 
         /* 버튼 위치 */
         .mybtn {
+            padding: 200px,37px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
-
+    
         /* 정보 박스 위치 */
         .details {
             width: 1000px;
@@ -84,7 +85,6 @@
 
         .my-detail-btn {
             /*width: 100%;*/
-
             background-color: #212529;
             border: none;
             padding: .375rem .75rem;
@@ -98,14 +98,41 @@
             margin:30px auto 30px auto;
             padding: 20px 20px 20px 20px;
         }
-
+     
         .col-md-8{
             background-color: rgb(245, 239, 244);
             border-radius: 0.25rem;
         }
     </style>
+ 
+    <script>
+        let detail_num = 1000;
+
+        function information(num) {
+            if (num === detail_num) {
+                detail_num = 1000;
+                $('#details').empty();
+            } else if (num === 0) {
+                detail_num = num;
+                info0();
+            } else if (num === 1) {
+                detail_num = num;
+                info1();
+            } else if (num === 2) {
+                detail_num = num;
+                info2();
+            } else if (num === 3) {
+                detail_num = num;
+                info3();
+            } else if (num === 4) {
+                detail_num = num;
+                info4();
+            } else if (num === 5) {
+                detail_num = num;
+                info5();
+            }
+
 </head>
-<!-- 본인 정보에 관한 코드 작성 부분-->
 <script>
     let detail_num = 1000;
 
@@ -325,11 +352,12 @@
         <p class="title2"></span> 요일 : <span id="todays"></span> &nbsp;&nbsp;현재기온 : <span id="temps"></span> &nbsp;&nbsp;미세먼지 : <span id="ment"></p>
     </div>
     <div class="col">
-        <div class="mybtn">
-            <button id="info0" onclick="information(0)" class="my-detail-btn" style="width: 100px">팀 소개</button>
+        <div class="mybtn" style="margin-top: 20px;">
+            <button id="info0" onclick="information(0)" class="my-detail-btn" style="width: 100px; margin: 0px 10px 0px 0px;">팀 소개</button>  
+            <button id="close"onclick = "openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
         </div>
-    </div>
 
+    </div>
     <div class="profile">
         <div id="myprofile" class="row row-cols-1 row-cols-md-5 g-5">
             <div class="col" style="border-radius: 30%">
@@ -406,6 +434,7 @@
     <div class="comment">
         <button onclick="openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
     </div>
+
 
 </body>
 

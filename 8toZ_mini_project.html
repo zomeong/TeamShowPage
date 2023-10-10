@@ -12,7 +12,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Nanum+Gothic&family=Noto+Sans+KR&display=swap');
-
+        
         * {
             font-family: 'Diphylleia', serif;
             font-family: 'Nanum Gothic', sans-serif;
@@ -47,7 +47,8 @@
             margin: 50px auto 20px auto;
             padding: 20px 20px 20px 20px;
             border-radius: 5px;
-            box-shadow: 0px 0px 3px 0px blue;
+            box-shadow: 0px 0px 5px 0px rgb(245, 239, 244);
+            background-color: rgb(245, 239, 244);
         }
 
         /* 이름 위치 style */
@@ -80,6 +81,7 @@
             outline: none;
             text-decoration: none;
         }
+
         .my-detail-btn {
             /*width: 100%;*/
 
@@ -97,45 +99,46 @@
             padding: 20px 20px 20px 20px;
         }
 
-        .card h-100{
+        .col-md-8{
+            background-color: rgb(245, 239, 244);
             border-radius: 0.25rem;
         }
-
     </style>
-    <!-- 본인 정보에 관한 코드 작성 부분-->
-    <script>
-        let detail_num = 1000;
+</head>
+<!-- 본인 정보에 관한 코드 작성 부분-->
+<script>
+    let detail_num = 1000;
 
-        function information(num) {
-            if (num === detail_num) {
-                detail_num = 1000;
-                $('#details').empty();
-            } else if (num === 0) {
-                detail_num = num;
-                info0();
-            } else if (num === 1) {
-                detail_num = num;
-                info1();
-            } else if (num === 2) {
-                detail_num = num;
-                info2();
-            } else if (num === 3) {
-                detail_num = num;
-                info3();
-            } else if (num === 4) {
-                detail_num = num;
-                info4();
-            } else if (num === 5) {
-                detail_num = num;
-                info5();
-            }
-        }
-
-        function info0() {
-            //팀 세부정보
-            //소개, mbti, 장점, 협업스타일, 블로그 입력
+    function information(num) {
+        if (num === detail_num) {
+            detail_num = 1000;
             $('#details').empty();
-            let tmp_html = `
+        } else if (num === 0) {
+            detail_num = num;
+            info0();
+        } else if (num === 1) {
+            detail_num = num;
+            info1();
+        } else if (num === 2) {
+            detail_num = num;
+            info2();
+        } else if (num === 3) {
+            detail_num = num;
+            info3();
+        } else if (num === 4) {
+            detail_num = num;
+            info4();
+        } else if (num === 5) {
+            detail_num = num;
+            info5();
+        }
+    }
+
+    function info0() {
+        //팀 세부정보
+        //소개, mbti, 장점, 협업스타일, 블로그 입력
+        $('#details').empty();
+        let tmp_html = `
             <div class="card mb-3">
             <div class="row g-0" style="height: 320px">
 <!--              <div class="col-md-4">-->
@@ -155,10 +158,10 @@
             $('#details').append(tmp_html);
         }
 
-        function info1() {
-            $('#details').empty();
+    function info1() {
+        $('#details').empty();
 
-            let tmp_html = `
+        let tmp_html = `
                     <div class="card mb-3">
                     <div class="row g-0">
                       <div class="col-md-4">
@@ -177,13 +180,13 @@
                     </div>
                   </div>`
 
-            $('#details').append(tmp_html);
-        }
+        $('#details').append(tmp_html);
+    }
 
-        function info2() {
-            $('#details').empty();
+    function info2() {
+        $('#details').empty();
 
-            let tmp_html = `
+        let tmp_html = `
             <div class="card mb-3">
                <div class="row g-0">
                   <div class="col-md-4">
@@ -203,16 +206,16 @@
               </div>
             `
 
-            $('#details').append(tmp_html);
-        }
+        $('#details').append(tmp_html);
+    }
 
 
-        function info3() {
-            //본인 세부정보
-            //소개, mbti, 장점, 협업스타일, 블로그 입력
-            $('#details').empty();
+    function info3() {
+        //본인 세부정보
+        //소개, mbti, 장점, 협업스타일, 블로그 입력
+        $('#details').empty();
 
-            let tmp_html = `
+        let tmp_html = `
             <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
@@ -230,15 +233,15 @@
               </div>
             </div>
           </div>`
-            $('#details').append(tmp_html);
-        }
+        $('#details').append(tmp_html);
+    }
 
-        function info4() {
-            //본인 세부정보
-            //소개, mbti, 장점, 협업스타일, 블로그 입력
-            $('#details').empty();
+    function info4() {
+        //본인 세부정보
+        //소개, mbti, 장점, 협업스타일, 블로그 입력
+        $('#details').empty();
 
-            let tmp_html = `
+        let tmp_html = `
             <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
@@ -257,14 +260,14 @@
             </div>
           </div>
         `
-            $('#details').append(tmp_html);
-        }
+        $('#details').append(tmp_html);
+    }
 
-        function info5() {
-            //본인 세부정보
-            //소개, mbti, 장점, 협업스타일, 블로그 입력
-            $('#details').empty();
-            let tmp_html = `
+    function info5() {
+        //본인 세부정보
+        //소개, mbti, 장점, 협업스타일, 블로그 입력
+        $('#details').empty();
+        let tmp_html = `
             <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
@@ -283,39 +286,38 @@
             </div>
           </div>
         `
-            $('#details').append(tmp_html);
-        }  
-    
-        function openclose() {
-            window.open();
-        }
+        $('#details').append(tmp_html);
+    }
+
+    function openclose() {
+        window.open();
+    }
 
     function title2() {
-      let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-      fetch(url).then(res => res.json()).then(data => {
+        let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(url).then(res => res.json()).then(data => {
 
-                let temp = data['temp'];
-                $('#temps').text(temp);
+            let temp = data['temp'];
+            $('#temps').text(temp);
+        })
+        $(document).ready(function () {
+            let url = "http://spartacodingclub.shop/sparta_api/seoulair";
+            fetch(url).then(res => res.json()).then(data => {
+                let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM']
+                $('#ment').text(mise);
             })
-            $(document).ready(function () {
-                let url = "http://spartacodingclub.shop/sparta_api/seoulair";
-                fetch(url).then(res => res.json()).then(data => {
-                    let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM']
-                    $('#ment').text(mise);
-                })
-            })
-            $(document).ready(function () {
-                let today = new Date();
-                let day = today.getDay();
-                let daylist = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
-                console.log("요일 : " + daylist[day]);
-                $('#todays').text(daylist[day]);
-            }
-            )
+        })
+        $(document).ready(function () {
+            let today = new Date();
+            let day = today.getDay();
+            let daylist = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+            console.log("요일 : " + daylist[day]);
+            $('#todays').text(daylist[day]);
         }
-        title2();
-    </script>
-</head>
+        )
+    }
+    title2();
+</script>
 
 <body>
     <div class="title">
@@ -397,13 +399,15 @@
             </div>
         </div>
     </div>
-    
+
     <!-- 정보 표시 박스 -->
     <div id="details" class="details" style="height: 320px; margin-bottom: 50px">
     </div>
     <div class="comment">
-        <button onclick = "openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
+        <button onclick="openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
     </div>
+
 </body>
+
 
 </html>

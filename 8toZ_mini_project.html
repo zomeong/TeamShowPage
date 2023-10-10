@@ -181,6 +181,7 @@
             $('#details').empty();
 
             let tmp_html = `
+
             <div class="card mb-3" style="height: 319.33px;>
                 <div class="card mb-3" >
                     <div class="row g-0" >
@@ -379,13 +380,19 @@
         }
 
         function openclose() {
-            window.open("comment.html", "comment", "width=600, height=400, menubar=no");
+
+            var pw = 600;
+            var ph = 400;
+            var px = window.screen.width / 2 - pw / 2;
+            var py = window.screen.height / 2 - ph / 2;
+            var option = 'width='+pw +', height='+ph +', left='+px +',top='+py;
+
+            window.open("comment.html", "comment", option);
         }
 
         function title2() {
             let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
             fetch(url).then(res => res.json()).then(data => {
-
                 let temp = data['temp'];
                 $('#temps').text(temp);
             })

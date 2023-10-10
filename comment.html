@@ -80,12 +80,12 @@
             let docs = await getDocs(collection(db, "mini_project"));
         docs.forEach((doc) => {
             let comment = doc.data().comment;
-
             let temp_html = `
             <li class="list-group-item">${comment}</li>`;
             $('#list-group').append(temp_html);
         });
         }
+
 
         $(document).ready(function() {
             updateCmt();

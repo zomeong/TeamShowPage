@@ -54,11 +54,15 @@
         /* 이름 위치 style */
         .card-body {
             text-align: center;
-            /* box-shadow: 0px 0px 3px 0px blue; */
         }
 
+        /* 팀소개 위치 */
         .card-info {
             height: 319.33px;
+            display: flex;
+            align-items: center;
+            /* position: relative;
+            top: 4%; */
         }
 
         /* 버튼 위치 */
@@ -84,6 +88,7 @@
             text-decoration: none;
         }
 
+        /* 세부정보 버튼 */
         .my-detail-btn {
             /*width: 100%;*/
             background-color: #212529;
@@ -94,6 +99,7 @@
             border-radius: 0.25rem;
         }
 
+        /* 댓글달기 버튼 */
         .comment {
             width: 808px;
             height: 400px;
@@ -101,39 +107,27 @@
             padding: 20px 20px 20px 20px;
         }
 
+        /* 개인 프로파일 배경 */
         .col-md-8 {
             background-color: rgb(245, 239, 244);
             border-radius: 0.25rem;
         }
+
+        /* table 간격 title */
+        .table-title{
+            width: 120px;
+            height: 50px;
+        }
+        /* table 간격 content */
+        .table-content{
+            height: 50px;
+        }
+
+
     </style>
 
     <script>
         let detail_num = 1000;
-        function information(num) {
-            if (num === detail_num) {
-                detail_num = 1000;
-                $('#details').empty();
-            } else if (num === 0) {
-                detail_num = num;
-                info0();
-            } else if (num === 1) {
-                detail_num = num;
-                info1();
-            } else if (num === 2) {
-                detail_num = num;
-                info2();
-            } else if (num === 3) {
-                detail_num = num;
-                info3();
-            } else if (num === 4) {
-                detail_num = num;
-                info4();
-            } else if (num === 5) {
-                detail_num = num;
-                info5();
-            }
-        }
-
         function information(num) {
             if (num === detail_num) {
                 detail_num = 1000;
@@ -165,11 +159,11 @@
             $('#details').empty();
             let tmp_html = `
                 <div class="card mb-3">
-                    <div class="row g-0" style="height: 320px">
+                    <div class="row g-0" style="height: 319.33px">
 <!--              <div class="col-md-4">-->
                             <!--                <img src="https://ca.slack-edge.com/T043597JK8V-U05RWM8HUBB-2b697d5008f2-512" class="img-fluid rounded-start" alt="...">-->
                                 <!--              </div>-->
-                        <div class="col-md-12">
+                        <div class="col-md-12" style = "background-color: rgb(245, 239, 244);">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:40px;">8 to Z</p>
                                 <p class="card-text" style="font-size:20px;">팀 소개 : 8팀은 끝까지 간다!</p>
@@ -187,50 +181,78 @@
             $('#details').empty();
 
             let tmp_html = `
-                <div class="card mb-3">
-                    <div class="row g-0">
+
+            <div class="card mb-3" style="height: 319.33px;>
+                <div class="card mb-3" >
+                    <div class="row g-0" >
                         <div class="col-md-4">
                             <img src="https://ca.slack-edge.com/T043597JK8V-U05QUMWUDQB-bcdf90a532a7-512" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-info">
+                        <div class="col-md-8" >
+                            <div class="card-info">  
                                 <!-- <h4 class="card-title"></h4> -->
-                                <p class="card-text" style="font-size:20px;">소개: 백엔드에 관심이 많아 배우고 싶어서 참여했습니다.</p>
-                                <p class="card-text" style="font-size:20px;">MBTI: ESTJ </p>
-                                <p class="card-text" style="font-size:20px;">장점: 책임감이 강한 편이며 팀원들과 정보 공유를 많이 합니다.</p>
-                                <p class="card-text" style="font-size:20px;">협업스타일: 주도적으로 의견을 제시하고 회의를 주도하는 편이며 맡은 일은 끝까지 합니다.</p>
-                                <p class="card-text" style="font-size:20px;"><small class="text-body-secondary">블로그 주소: <a href="https://developer-backend.tistory.com/">https://developer-backend.tistory.com/</a></small></p>
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">소개:</td><td class = "table-content" style ="font-size:20px;">백엔드에 관심이 많아 배우고 싶어서 참여했습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">MBTI:</td><td class = "table-content" style ="font-size:20px;">ESTJ</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">장점:</td><td class = "table-content" style ="font-size:20px;">책임감이 강한 편이며 팀원들과 정보 공유를 많이 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">협업스타일:</td><td class = "table-content" style ="font-size:20px;">주도적으로 의견을 제시하고 회의를 주도하는 편이며 맡은 일은 끝까지 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">티스토리:</td><td class = "table-content" style ="font-size:20px;"><a href="https://developer-backend.tistory.com/">https://developer-backend.tistory.com/</a></small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>`
-
-            $('#details').append(tmp_html);
+                $('#details').append(tmp_html);
         }
 
         function info2() {
             $('#details').empty();
 
             let tmp_html = `
-                <div class="card mb-3">
-                    <div class="row g-0">
+            <div class="card mb-3" style="height: 319.33px;>
+                <div class="card mb-3" >
+                    <div class="row g-0" >
                         <div class="col-md-4">
                             <img src="https://ca.slack-edge.com/T043597JK8V-U05PRQSLWRZ-c3545da2d441-512" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-info">
+                        <div class="col-md-8" >
+                            <div class="card-info">  
                                 <!-- <h4 class="card-title"></h4> -->
-                                <p class="card-text" style="font-size:20px;">소개 : 사용자 중심의 서비스를 제공하고 싶은 백엔드 개발자입니다. 같이 공부할 사람이 필요해서 내배캠에 합류했습니다.</p>
-                                <p class="card-text" style="font-size:20px;">MBTI : ESTP</p>
-                                <p class="card-text" style="font-size:20px;">장점 : 추진력과 실행력 강합니다. 관심이 있는 분야는 집요하게 파는 성격입니다.</p>
-                                <p class="card-text" style="font-size:20px;">협업스타일 : 오해하지 않게 충분히 소통하는 것을 중요하게 생각합니다.</p>
-                                <p class="card-text" style="font-size:20px;"><small class="text-body-secondary">velog : <a href="https://velog.io/@jiisuniui"> @jiisuniui</a></small></p>
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">소개:</td><td class = "table-content" style ="font-size:20px;">사용자 중심의 서비스를 제공하고 싶은 백엔드 개발자입니다. 같이 공부할 사람이 필요해서 내배캠에 합류했습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">MBTI:</td><td class = "table-content" style ="font-size:20px;">ESTP</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">장점:</td><td class = "table-content" style ="font-size:20px;">추진력과 실행력 강합니다. 관심이 있는 분야는 집요하게 파는 성격입니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">협업스타일:</td><td class = "table-content" style ="font-size:20px;">오해하지 않게 충분히 소통하는 것을 중요하게 생각합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">velog: </td><td class = "table-content" style ="font-size:20px;"><a href="https://velog.io/@jiisuniui"> @jiisuniui</a></small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
-                `
-
+                </div>`
             $('#details').append(tmp_html);
         }
 
@@ -241,19 +263,34 @@
             $('#details').empty();
 
             let tmp_html = `
-                <div class="card mb-3">
-                    <div class="row g-0">
+            <div class="card mb-3" style="height: 319.33px;>
+                <div class="card mb-3" >
+                    <div class="row g-0" >
                         <div class="col-md-4">
                             <img src="https://ca.slack-edge.com/T043597JK8V-U05RJ6WL56V-3d23be78f634-512" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-info">
+                        <div class="col-md-8" >
+                            <div class="card-info">  
                                 <!-- <h4 class="card-title"></h4> -->
-                                <p class="card-text" style="font-size:20px;">소개 : 실력 좋은 웹개발자가 되고 싶은 취업준비생 입니다. 많이 배우고 공부하여 좋은 웹개발자가 되려고 내일배움캠프 신청 하였습니다.</p>
-                                <p class="card-text" style="font-size:20px;">MBTI : ISTJ</p>
-                                <p class="card-text" style="font-size:20px;">장점 : 자신이 하는일에 열정을 담아서 합니다.</p>
-                                <p class="card-text" style="font-size:20px;">협업스타일 : 팀에서 자신이 맡은일을 수행하고 부족한 부분이 있으면 서로 협력하여 채워주는 스타일 입니다. </p>
-                                <p class="card-text" style="font-size:20px;"><small class="text-body-secondary"><a href="https://velog.io/@carwoo_125">velog : @carwoo_125 </a></small></p>
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">소개:</td><td class = "table-content" style ="font-size:20px;">실력 좋은 웹개발자가 되고 싶은 취업준비생 입니다. 많이 배우고 공부하여 좋은 웹개발자가 되려고 내일배움캠프 신청 하였습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">MBTI:</td><td class = "table-content" style ="font-size:20px;">ISTJ</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">장점:</td><td class = "table-content" style ="font-size:20px;">자신이 하는일에 열정을 담아서 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">협업스타일:</td><td class = "table-content" style ="font-size:20px;">팀에서 자신이 맡은일을 수행하고 부족한 부분이 있으면 서로 협력하여 채워주는 스타일 입니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">velog: </td><td class = "table-content" style ="font-size:20px;"><a href="https://velog.io/@carwoo_125">@carwoo_125 </a></small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -267,24 +304,38 @@
             $('#details').empty();
 
             let tmp_html = `
-                <div class="card mb-3">
-                    <div class="row g-0">
+            <div class="card mb-3" style="height: 319.33px;>
+                <div class="card mb-3" >
+                    <div class="row g-0" >
                         <div class="col-md-4">
                             <img src="https://ca.slack-edge.com/T043597JK8V-U05RWM8HUBB-2b697d5008f2-512" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-info">
+                        <div class="col-md-8" >
+                            <div class="card-info">  
                                 <!-- <h4 class="card-title"></h4> -->
-                                <p class="card-text" style="font-size:20px;">소개 : 컴공 4학년 휴학중입니다. 졸업 전에 제대로 실력을 쌓고 많은 프로젝트와 협업 경험을 하고 싶어 내일배움캠프에 합류하게 되었습니다.</p>
-                                <p class="card-text" style="font-size:20px;">MBTI : ISFJ</p>
-                                <p class="card-text" style="font-size:20px;">장점 : 책임감과 인내력이 강한 편이며 차분하고 묵묵하게 할 일을 하는 편입니다. 필요할 땐 외향적으로 사람들과 만나곤 합니다.</p>
-                                <p class="card-text" style="font-size:20px;">협업스타일 : 팀원들 간의 화합과 협력을 위한 역할을 하곤 합니다.</p>
-                                <p class="card-text" style="font-size:20px;"><small class="text-body-secondary"><a href="https://velog.io/@zo_meong">velog : @zo_meong</a></small></p>
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">소개:</td><td class = "table-content" style ="font-size:20px;">컴공 4학년 휴학중입니다. 졸업 전에 제대로 실력을 쌓고 많은 프로젝트와 협업 경험을 하고 싶어 내일배움캠프에 합류하게 되었습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">MBTI:</td><td class = "table-content" style ="font-size:20px;">ISFJ</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">장점:</td><td class = "table-content" style ="font-size:20px;">책임감과 인내력이 강한 편이며 차분하고 묵묵하게 할 일을 하는 편입니다. 필요할 땐 외향적으로 사람들과 만나곤 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">협업스타일:</td><td class = "table-content" style ="font-size:20px;">팀원들 간의 화합과 협력을 위한 역할을 하곤 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">velog: </td><td class = "table-content" style ="font-size:20px;"><small class="text-body-secondary"><a href="https://velog.io/@zo_meong">@zo_meong</a></small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
-                `
+                </div>`
             $('#details').append(tmp_html);
         }
 
@@ -293,28 +344,43 @@
             //소개, mbti, 장점, 협업스타일, 블로그 입력
             $('#details').empty();
             let tmp_html = `
-                <div class="card mb-3">
-                    <div class="row g-0">
+            <div class="card mb-3" style="height: 319.33px;>
+                <div class="card mb-3" >
+                    <div class="row g-0" >
                         <div class="col-md-4">
                             <img src="https://ca.slack-edge.com/T043597JK8V-U05SS8DC292-edfb9a0a6966-512" class="img-fluid rounded-start" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-info">
+                        <div class="col-md-8" >
+                            <div class="card-info">  
                                 <!-- <h4 class="card-title"></h4> -->
-                                <p class="card-text" style="font-size:20px;">소개 : 부족한 실력을 기르고 다른 사람들과 협업해 보는 경헝을 쌓고자 내일배움캠프에 참여하게 되었습니다.</p>
-                                <p class="card-text" style="font-size:20px;">MBTI : ISFP </p>
-                                <p class="card-text" style="font-size:20px;">장점 : 맡은 역할은 끝까지 최선을 다 합니다.</p>
-                                <p class="card-text" style="font-size:20px;">협업스타일 : 배려와 존중을 하며 협업하는 스타일입니다.</p>
-                                <p class="card-text" style="font-size:20px;"><small class="text-body-secondary"><a href="https://velog.io/@jeong_uk">velog : @jeong_uk </a></small></p>
+                                <table >
+                                    <tbody>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">소개:</td><td class = "table-content" style ="font-size:20px;">부족한 실력을 기르고 다른 사람들과 협업해 보는 경헝을 쌓고자 내일배움캠프에 참여하게 되었습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">MBTI:</td><td class = "table-content" style ="font-size:20px;">ISFP</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">장점:</td><td class = "table-content" style ="font-size:20px;">맡은 역할은 끝까지 최선을 다 합니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">협업스타일:</td><td class = "table-content" style ="font-size:20px;">배려와 존중을 하며 협업하는 스타일입니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class = "table-title" style="font-size:20px;">velog: </td><td class = "table-content" style ="font-size:20px;"><a href="https://velog.io/@jeong_uk">@jeong_uk </a></small></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
-        `
+                </div>`
             $('#details').append(tmp_html);
         }
 
         function openclose() {
+
             var pw = 600;
             var ph = 400;
             var px = window.screen.width / 2 - pw / 2;
@@ -327,7 +393,6 @@
         function title2() {
             let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
             fetch(url).then(res => res.json()).then(data => {
-
                 let temp = data['temp'];
                 $('#temps').text(temp);
             })
@@ -443,6 +508,4 @@
     <div id="details" class="details" style="height: 320px; margin-bottom: 50px">
     </div>
 </body>
-
-
 </html>

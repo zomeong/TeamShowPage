@@ -87,6 +87,13 @@
             color: white;
             border-radius: 0.25rem;
         }
+        
+        .comment{
+            width: 808px;
+            height: 400px;
+            margin:30px auto 30px auto;
+            padding: 20px 20px 20px 20px;
+        }
 
     </style>
     <!-- 본인 정보에 관한 코드 작성 부분-->
@@ -226,6 +233,12 @@
             $('#details').append(tmp_html);
 
         }  
+        function openclose() {
+            window.open()
+
+
+        }
+
     </script>
 </head>
 
@@ -301,6 +314,12 @@
     <!-- 정보 표시 박스 -->
     <div id="details" class="details">
     </div>
+
+    <div class="comment">
+        <button onclick = "openclose()" type="button" class="btn btn-outline-dark">댓글달기</button>
+    </div>
+
 </body>
+
 
 </html>
